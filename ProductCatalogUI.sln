@@ -3,18 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "productCatalogUI", "..\ProductCatalogFrontEnd\productCatalogUI\", "{85404FCF-4B2E-42A2-9DE3-2DDE8FB0C333}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "productCatalogUI", ".", "{85404FCF-4B2E-42A2-9DE3-2DDE8FB0C333}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_62022"
-		Debug.AspNetCompiler.PhysicalPath = "..\ProductCatalogFrontEnd\productCatalogUI\"
+		Debug.AspNetCompiler.PhysicalPath = "..\productCatalogUI\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62022\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_62022"
-		Release.AspNetCompiler.PhysicalPath = "..\ProductCatalogFrontEnd\productCatalogUI\"
+		Release.AspNetCompiler.PhysicalPath = "..\productCatalogUI\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62022\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"

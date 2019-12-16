@@ -1,0 +1,52 @@
+
+                <form  #productForm="ngForm" novalidate (ngSubmit)="save()" autocomplete="off">
+                    <div class="">
+                        <h4 class="">
+                                <h4 class="">                                        
+                                     <span >{{title}}</span>
+                                </h4>                                                                   
+                        </h4>                       
+                    </div>
+                    <div class="">
+                            <div class="ui-grid ui-grid-responsive ui-grid-pad">
+                                    <div class="ui-g-6 ui-md-6 ui-sm-12">
+                                            <label class="ui-g-3 ui-md-3 ui-sm-12" for="code">Product Code</label>
+                                            <input class="ui-g-9 ui-md-9 ui-sm-12 text-left no-padding"
+                                                   pInputText id="code" 
+                                                   type="text" name="code"
+                                                   [(ngModel)]="productInput.code"  maxlength="32">
+                                    </div>
+                                       <div class="ui-g-6 ui-md-6 ui-sm-12">
+                                            <label class="ui-g-3 ui-md-3 ui-sm-12" for="name"> Name</label>
+                                            <input class="ui-g-9 ui-md-9 ui-sm-12 text-left no-padding"
+                                                    id="name" 
+                                                   type="text" name="name"
+                                                   [(ngModel)]="productInput.name"  maxlength="32">                                                   
+                                       </div>
+                                        <div class="ui-g-6 ui-md-6 ui-sm-12">
+                                            <label class="ui-g-3 ui-md-3 ui-sm-12" for="price">Price</label>
+                                            <input class="ui-g-9 ui-md-9 ui-sm-12 text-left "
+                                                   id="price" 
+                                                   type="text" name="price"
+                                                   [(ngModel)]="productInput.price" >                                                   
+                                        </div>
+                                        
+                            </div>
+                                
+                    </div>
+                    <div class="row" style="margin-top: 5vw">  
+                                <div class="col-lg-2 col-md-2 col-sm-3"> 
+                                                <button  class="btn btn-info btn-block" type="submit"                                                 
+                                                [disabled]="!productForm.form.valid"
+                                                >Save</button>
+                                </div>
+                       <div class="col-lg-2 col-md-2 col-sm-3">
+                                <button style="margin-right: 1vw " *ngIf="productInput.id>0" 
+                                                (click)="delete()"
+                                                class="btn btn-danger btn-block" type="button"                                                                            
+                                        >Delete</button>
+                       </div>                             
+                           
+                    </div>
+                </form>
+           
