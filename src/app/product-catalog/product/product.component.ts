@@ -19,14 +19,16 @@ export class ProductComponent implements OnInit {
     private productServiceProxy: ProductServiceProxy){
     
   }
-  ngOnInit(){
-    debugger;
+  ngOnInit(){    
     this.cols = [
       { field: 'code', header: 'Code' },
       { field: 'name', header: 'Name' },
       { field: 'price', header: 'Price' },
       { field: 'lastUpdateTime', header: 'Last Update' }
   ];
+    this.getAllProducts();
+  }
+  getAllProducts(){
     this.productServiceProxy.getProducts(undefined,undefined,
       undefined,0,10,false,'1').subscribe(data => {
       this.products= data.resultList;
@@ -42,6 +44,7 @@ export class ProductComponent implements OnInit {
   }
   search(value:string){
     if(value.length==0){
+      this.getAllProducts();
       return;
     }
     let convert = Number(value);
@@ -57,8 +60,7 @@ export class ProductComponent implements OnInit {
         this.products= data.resultList;
       });
   }
-  getExcel(){
-    debugger;
+  getExcel(){  
     let filter = new ProductFilterInputDto();
     this.productServiceProxy.exportExcel(filter,'1').subscribe(result => {
       let value: any;
