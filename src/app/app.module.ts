@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ProductCatalogModule } from './product-catalog/product-catalog.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 export function getBaseUrl(): string {
@@ -29,12 +30,13 @@ export function getBaseUrl(): string {
     HttpClientModule,
     BrowserAnimationsModule,        
     FormsModule,
-    ProductCatalogModule 
+    ProductCatalogModule ,
+    NgbModule
   ],
   providers: [
     { provide: API_BASE_URL, useFactory: getBaseUrl },
-    ProductServiceProxy
+    ProductServiceProxy    
   ],
-  bootstrap: [AppComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

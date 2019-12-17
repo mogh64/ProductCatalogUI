@@ -3,6 +3,7 @@ import { ProductServiceProxy, ProductOutputDto, ProductFilterInputDto } from 'sr
 import { ActivatedRoute, Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'product',
   templateUrl: './product.component.html',

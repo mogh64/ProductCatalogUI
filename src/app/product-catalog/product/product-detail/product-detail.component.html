@@ -28,10 +28,18 @@
                                             <input class="ui-g-9 ui-md-9 ui-sm-12 text-left "
                                                    id="price" 
                                                    type="text" name="price"
+                                                   #price
                                                    [(ngModel)]="productInput.price" >                                                   
                                         </div>
                                         
                             </div>
+                            <div *ngIf="price.value>maxPrice" class="form-check">
+                                <label class="form-check-label">
+                                  <input type="checkbox" [(ngModel)]="confirmed" id="priceCheck"
+                                   name="priceCheck" [ngModelOptions]="{standalone: true}"
+                                  class="form-check-input">I Approve Price {{price.value}}
+                                </label>
+                              </div>
                                 
                     </div>
                     <div class="row" style="margin-top: 5vw">  
@@ -50,3 +58,4 @@
                     </div>
                 </form>
            
+                          

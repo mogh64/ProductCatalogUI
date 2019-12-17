@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, ElementRef } from '@angular/core';
 import { ProductServiceProxy, ProductInputDto } from 'src/share/service-proxies/service-proxies';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -7,11 +7,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit {  
    title;'';
    id:any = 0;
+   maxPrice=999;
    productInput:ProductInputDto;
   
+   message: string;
+   confirmed=false;
    
   constructor(
     private route: ActivatedRoute,
@@ -25,9 +28,13 @@ export class ProductDetailComponent implements OnInit {
   }
   onShown() {
 
-}
+  }
+  
 save() {
-  debugger;
+  if(this.productInput.price>this.maxPrice && this.confirmed==false){
+      return;
+  }
+  this.productInput.confirmed=this.confirmed;
   if(this.productInput.id>0){
     this.producServiceProxy.editProduct(this.productInput,'1').subscribe(x=>{
       this.goToMain();
@@ -40,9 +47,11 @@ save() {
     },() => {
   
    });
-  }
+  }  
 
 }
+
+
   public getProduct(id?: any){
       this.productInput = new ProductInputDto();
       if(id && id>0){
